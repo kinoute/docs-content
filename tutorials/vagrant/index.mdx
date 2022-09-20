@@ -114,8 +114,8 @@ To update your default Ubuntu to the latest version and to install the Apache we
 # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
 # documentation for more information about their specific syntax and use.
 config.vm.provision "shell", inline: <<-SHELL
- apt-get update
- apt-get install -y apache2
+apt-get update
+apt-get install -y apache2
 SHELL
 end
 ```
@@ -190,7 +190,7 @@ vagrant ssh
 
 And you will see an output like the following, meaning that you are connected to your Scaleway instance now:
 
-```_
+```
  ___  ___ __ _| | _____      ____ _ _   _
 / __|/ __/ _` | |/ _ \ \ /\ / / _` | | | |
 \__ \ (_| (_| | |  __/\ V  V / (_| | |_| |

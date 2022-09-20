@@ -220,7 +220,7 @@ var params = {
   Endpoint: 'arn:scw:sqs:fr-par:AC2Q5LK75VW4I3LPQXGHVKUCL56ZMPNRLBR7JI4LELSMDMKSEZ6RVGYA:000',
   ReturnSubscriptionArn: true
 };
- 
+
 sns.subscribe(params, function(err, data) {
   if (err) console.log(err, err.stack); // an error occurred
   else     console.log(data);           // successful response
@@ -240,7 +240,7 @@ var params = {
   Endpoint: 'https://demodayndhiixus-logall.functions.fnc.fr-par.scw.cloud',
   ReturnSubscriptionArn: true
 };
- 
+
 sns.subscribe(params, function(err, data) {
   if (err) console.log(err, err.stack); // an error occurred
   else     console.log(data);           // successful response
@@ -259,7 +259,7 @@ var params = {
   Endpoint: 'https://demodayndhiixus-logall.functions.fnc.fr-par.scw.cloud',
   ReturnSubscriptionArn: true
 };
- 
+
 sns.subscribe(params, function(err, data) {
   if (err) console.log(err, err.stack); // an error occurred
   else     console.log(data);           // successful response
@@ -302,7 +302,7 @@ The following code sample deletes all subscriptions to a topic.
 var params = {
   TopicArn: '', /* required */
 };
- 
+
 sns.listSubscriptionsByTopic(params, function (err, data) {
   if (err) console.log(err, err.stack); // an error occurred
   else

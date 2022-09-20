@@ -24,23 +24,22 @@ dates:
 1. Click **Order** on your Dedibox console homepage.
 
 2. Click **Server**. The server offers page displays.
+    <Message type="note">
 
-  <Message type="note">
+      If you want order servers from a specific datacenter, you can list all servers available in your datacenter of choice by clicking on the **Datacenter selection** drop-down menu on the top right corner.
 
-    If you want order servers from a specific datacenter, you can list all servers available in your datacenter of choice by clicking on the **Datacenter selection** drop-down menu on the top right corner.
-
-  </Message>
+    </Message>
 
 3. Select a server model and click the **Order** button next to your choice. The server creation wizard displays.
 
 4. Complete the following steps in the wizard:
     - Select the datacenter.
 
-  <Message type="note">
+    <Message type="note">
 
-    Some server models are available in more than one datacenter. If you have no preference, you can leave **No preference** selected.
+      Some server models are available in more than one datacenter. If you have no preference, you can leave **No preference** selected.
 
-  </Message>
+    </Message>
 
     - Choose the service level. There are two plans available: 
       - **Basic service level**: this plan is included with any Dedibox server. It allows for assistance by ticket and phone, an H+4 GTI, a 99,9% SLA and RPN with limited bandwidth. 
@@ -48,11 +47,11 @@ dates:
     - Select a backup option between: 750GB FTP, 100GB FTP or no FTP backup.
     - Choose a plan for protection against DDoS. 
 
-  <Message type="note">
+    <Message type="note">
 
-    If you wish to benefit from the **Preventive** or **Curative** anti-DDoS plans, you must have activated the business service level for the server. 
+      If you wish to benefit from the **Preventive** or **Curative** anti-DDoS plans, you must have activated the business service level for the server. 
 
-  </Message>  
+    </Message>  
 
 5. Click **Order**. A summary of your order displays.
 
@@ -73,43 +72,40 @@ After the delivery of your server, you can begin installing it.
 2. Click **Manage** next to the server you want to install. The server install wizard displays.
 
 3. Select the type of operating system you want to install. 
-  
-  <Message type="tip">
+    <Message type="tip">
 
-    For more information about OS types, refer to the [dedicated servers concepts page](/dedibox/dedicated-servers/concepts#os-type).
+      For more information about OS types, refer to the [dedicated servers concepts page](/dedibox/dedicated-servers/concepts#os-type).
 
-  </Message>
+    </Message>
 
-  <Message type="note">
+    <Message type="note">
 
-    If you wish to complete your installation using [KVM Over IP](), click **Install over KVM** on this page.
+      If you wish to complete your installation using KVM Over IP, click **Install over KVM** on this page.
 
-  </Message>
+    </Message>
 
 4. Choose the operating system, and the OS version. Then, click **Install**. 
 
 5. Personalize the following [partitioning](/dedibox/dedicated-servers/concepts#partioning) parameters:
-
     - the file system (ext4, ext3, ext2, xfs, reiserfs, nfts, swap)
     - the mount point of the partition
     - the partition size
     - the software raid (RAID 0/1/5)
 
-  <Message type="note">
+    <Message type="note">
 
-    When you start a CentOS installation with custom partitioning, you need to keep about 5 GB of unallocated disk space to prevent the automatic installation system from crashing.
+      When you start a CentOS installation with custom partitioning, you need to keep about 5 GB of unallocated disk space to prevent the automatic installation system from crashing.
 
-  </Message>
+    </Message>
 
 6. Click **Validate**.
 
 7. Configure the system parameters. You can edit parameters such as the name of the server, add a username, password and SSH key, and configure monitoring alerts and updates.
+    <Message type="note">
 
-  <Message type="note">
+    To connect to your server via SSH, it is recommended that you [create and upload your SSH key](/dedibox-console/my-account/how-to/upload-an-ssh-key) at this stage so that it can be transferred to your server during installation.
 
-   To connect to your server via SSH, it is recommended that you [create and upload your SSH key](/dedibox-console/my-account/how-to/upload-an-ssh-key) at this stage so that it can be transferred to your server during installation.
-   
-  </Message>
+    </Message>
 
 8. Check that all information you entered is correct on the installation summary tab.
 
@@ -145,16 +141,16 @@ You can also use FTP, SFTP or SCP to transfer data to and from your server.
 
 2. Enter the command below into the terminal. Make sure you replace `your_private_key` with the filename of your private key (often `id_rsa`) and `your_server_ip` with the IP address of your server.
 
-  ```bash
-  ssh -i ~/.ssh/your_private_key root@your_server_ip
-  ```
+    ```bash
+    ssh -i ~/.ssh/your_private_key root@your_server_ip
+    ```
 
 3. If / when prompted, allow connection to the host by typing `yes`, then press **Enter**.
-  ```
-  The authenticity of host 'myhost.ext (212.47.226.35)' cannot be established.
-  RSA key fingerprint is 4f:ba:65:cf:14:64:a7:1e:b6:07:7c:00:71:95:21:fa.
-  Are you sure you want to continue connecting (yes/no)?
-  ```
+    ```
+    The authenticity of host 'myhost.ext (212.47.226.35)' cannot be established.
+    RSA key fingerprint is 4f:ba:65:cf:14:64:a7:1e:b6:07:7c:00:71:95:21:fa.
+    Are you sure you want to continue connecting (yes/no)?
+    ```
 
 ### From Windows
 
@@ -167,14 +163,13 @@ To connect to your Instance from Windows, you will need to use a small applicati
 2. Launch PuTTy on your computer. The main screen of the application displays.
 
 3. Enter your Instance's IP address in the **Hostname** field.
+    <Message type="tip">
 
-   <Message type="tip">
+    To find the IP address of your Instance, log into the Scaleway console and
+    click **Instances** in the Compute section of the side menu. A list of your
+    Instances and their associated IP addresses will display.
 
-  To find the IP address of your Instance, log into the Scaleway console and
-  click **Instances** in the Compute section of the side menu. A list of your
-  Instances and their associated IP addresses will display.
-
-   </Message>
+    </Message>
 
 4. Use the side menu to navigate to the **Auth** sub-category by expanding **Connection**, then **SSH** and finally clicking on **Auth**.
 

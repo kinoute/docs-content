@@ -83,40 +83,37 @@ This project contains two functions where:
     * Get all files from the source bucket:
     ```js
     s3.listObjectsV2(params, function (err, data) {
-     if (err) {
+    if (err) {
        console.log(err, err.stack); // an error occurred
-     } else {
-       let counter = 0;
-       const contents = data.Contents;
-       const total = contents.length;
+    } else {
+      let counter = 0;
+      const contents = data.Contents;
+      const total = contents.length;
     ```
     * Asynchronously call the ImageTransform function after having filtered objects on all images:
     ```js 
-           contents.forEach(function (content) {
-             // Infer the image type from the file suffix.
-             srcKey = content.Key;
-             const typeMatch = srcKey.match(/\.([^.]*)$/);
-             if (!typeMatch) {
-               console.log("Could not determine the image type.");
-             } else {
-               const imageType = typeMatch[1].toLowerCase();
-               // Check that the image type is supported
-               if (["jpeg", "jpg", "png"].includes(imageType) !== true) {
-                 return console.log(`Unsupported image type: ${imageType}`);
-               } else {
-                 try {
-                   console.log(TRANSFORM_URL + "?key=" + srcKey);
-                   https.get(TRANSFORM_URL + "?key=" + srcKey);
-                   counter += 1;
-                 } catch (error) {
-                   console.log(error);
-                 }
-               };
-             };
-           });
+    contents.forEach(function (content) {
+        // Infer the image type from the file suffix.
+      srcKey = content.Key;
+      const typeMatch = srcKey.match(/\.([^.]*)$/);
+      if (!typeMatch) {
+        console.log("Could not determine the image type.");
+      } else {
+        const imageType = typeMatch[1].toLowerCase();
+        // Check that the image type is supported
+        if (["jpeg", "jpg", "png"].includes(imageType) !== true) {
+          return console.log(`Unsupported image type: ${imageType}`);
+        } else {
+          try {
+            console.log(TRANSFORM_URL + "?key=" + srcKey);
+            https.get(TRANSFORM_URL + "?key=" + srcKey);
+            counter += 1;
+          } catch (error) {
+            console.log(error);
           }
-        });
-    }
+        };
+      };
+    });
     ```
 
 ## Creating the ImageTransformation function
@@ -138,10 +135,10 @@ The following steps are adapted from the [AWS lambda](https://docs.aws.amazon.co
 
 3. Create the ImageTransformation function:
     * Import dependencies
-     ```js
-     const AWS = require("aws-sdk");
-     const sharp = require("sharp");
-     ```
+    ```js
+    const AWS = require("aws-sdk");
+    const sharp = require("sharp");
+    ```
     * Import environment variables
     ```js
     const srcBucket = process.env.SOURCE_BUCKET;
@@ -214,7 +211,7 @@ The following steps are adapted from the [AWS lambda](https://docs.aws.amazon.co
     ```
     * Log Success transformation and end the function
     ```js
-       console.log(
+      console.log(
         "Successfully resized " +
           srcBucket +
           "/" +
@@ -254,34 +251,34 @@ service: fileupload
 configValidationMode: off
 
 provider:
- name: scaleway
- runtime: node14
- # Global Environment variables - used in every function
- env:
-   ACCESS_KEY: {Scaleway API key related to source and destination buckets}
-   ACCESS_KEY_ID: {Scaleway API key ID}
-   SOURCE_BUCKET: {source bucket key}
-   DESTINATION_BUCKET: {destination bucket key}
-   S3_ENDPOINT_URL: http://s3.fr-par.scw.cloud
-   TRANSFORM_URL: https://{your function}.functions.fnc.fr-par.scw.cloud
- # the path to the credentials file needs to be absolute
- scwToken: {Scaleway API token related to the Project ID}
- scwProject: {Scaleway Project ID}
+name: scaleway
+runtime: node14
+# Global Environment variables - used in every function
+env:
+  ACCESS_KEY: {Scaleway API key related to source and destination buckets}
+  ACCESS_KEY_ID: {Scaleway API key ID}
+  SOURCE_BUCKET: {source bucket key}
+  DESTINATION_BUCKET: {destination bucket key}
+  S3_ENDPOINT_URL: http://s3.fr-par.scw.cloud
+  TRANSFORM_URL: https://{your function}.functions.fnc.fr-par.scw.cloud
+# the path to the credentials file needs to be absolute
+scwToken: {Scaleway API token related to the Project ID}
+scwProject: {Scaleway Project ID}
 
 plugins:
- - serverless-scaleway-functions
+- serverless-scaleway-functions
 
 patterns:
-   - '!.gitignore'
-   - '!.git/**'
+  - '!.gitignore'
+  - '!.git/**'
 
 functions:
- imagetransform:
-   handler: ImageTransform.handle
-   memoryLimit: 1024
-   minScale: 1
- bucketscan:
-   handler: BucketScan.handle
-   memoryLimit: 1024
-   minScale: 0
+imagetransform:
+  handler: ImageTransform.handle
+  memoryLimit: 1024
+  minScale: 1
+bucketscan:
+  handler: BucketScan.handle
+  memoryLimit: 1024
+  minScale: 0
 ```

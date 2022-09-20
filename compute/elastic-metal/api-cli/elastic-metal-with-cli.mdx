@@ -125,7 +125,7 @@ Initialization completed with success.
       - You can add additional arguments to your command, such as `description` to add a description of your Elastic Metal server, or `tags.0` to add tags. 
         
     </Message>
- 
+
 2. Write down the ID of your server, as you will need it in the next steps.
 
   <Message type="tip">
@@ -141,62 +141,61 @@ Initialization completed with success.
 
 <Message type="note">
               
- You will need the SSH Key ID associated with your account to install your chosen OS on your server. 
+You will need the SSH Key ID associated with your account to install your chosen OS on your server. 
 
 </Message>
 
 
 1. Type the following command in your terminal to see a list of available OSes:
 
-  `scw baremetal os list zone=fr-par-2` 
+    `scw baremetal os list zone=fr-par-2` 
 
- An output with available OSes and their associated IDs displays:
+    An output with available OSes and their associated IDs displays:
 
- ```
-  ID                                    NAME
-  82ed3c56-935c-4012-b01f-69070fce1b1d  Ubuntu
-  0aa99516-52bb-4a7d-b9fe-1adc8478c2e0  Debian
-  58bf948f-8b9b-45c2-9ad6-582c26133f9e  Rocky Linux
-  e8fc12e5-cfcd-434a-a8b0-d5f5141baf91  Ubuntu
-  03b7f4ba-a6a1-4305-984e-b54fafbf1681  Ubuntu
-  86fd5e3a-b023-4fa8-a3ae-1a194d8cd68c  CentOS
-  f2aeab5d-6015-4b7c-b4ed-d76e89093621  Debian
-  01d6eef6-6b96-47fd-b9f9-3857321abe4f  Ubuntu
-  ```
+    ```
+      ID                                    NAME
+      82ed3c56-935c-4012-b01f-69070fce1b1d  Ubuntu
+      0aa99516-52bb-4a7d-b9fe-1adc8478c2e0  Debian
+      58bf948f-8b9b-45c2-9ad6-582c26133f9e  Rocky Linux
+      e8fc12e5-cfcd-434a-a8b0-d5f5141baf91  Ubuntu
+      03b7f4ba-a6a1-4305-984e-b54fafbf1681  Ubuntu
+      86fd5e3a-b023-4fa8-a3ae-1a194d8cd68c  CentOS
+      f2aeab5d-6015-4b7c-b4ed-d76e89093621  Debian
+      01d6eef6-6b96-47fd-b9f9-3857321abe4f  Ubuntu
+    ```
 
 2. Write down the ID of the OS you want to install.
 
 3. Type the following command to display the list of your SSH key's ID:
 
- ```
- scw account ssh-key list
- ```
+    ```
+    scw account ssh-key list
+    ```
 
-  You will see an output similar to the following:
+    You will see an output similar to the following:
 
-  ```
-  ID                 NAME                    CREATED AT  UPDATED AT 
-  your-ssh-key-ID    name-of-your-ssh-key    1 week ago  1 week ago  
-  ```
+    ```
+    ID                 NAME                    CREATED AT  UPDATED AT 
+    your-ssh-key-ID    name-of-your-ssh-key    1 week ago  1 week ago  
+    ```
 
 4. Write down your SSH Key ID as you will need it in the next steps.
 
 5. Type the following command to install an OS on your Elastic Metal server:  
 
-  ```
-  scw baremetal server install ID-of-your-elastic-metal-server os-id=ID-of-OS-you-want-to-install hostname=hostname-for-your-server ssh-key-ids.0=your-ssh-key-ID zone=fr-par-2
-  ```
+    ```
+    scw baremetal server install ID-of-your-elastic-metal-server os-id=ID-of-OS-you-want-to-install hostname=hostname-for-your-server ssh-key-ids.0=your-ssh-key-ID zone=fr-par-2
+    ```
 
 
-  <Message type="note">
+    <Message type="note">
 
-  If you have multiple SSH keys, you can use the argument `all-ssh-keys=true` to install all your SSH keys on the server.
+    If you have multiple SSH keys, you can use the argument `all-ssh-keys=true` to install all your SSH keys on the server.
 
-  </Message>
+    </Message>
 
 
-  An output similar to the following displays: 
-
+    An output similar to the following displays: 
       ```
       ID                          ID-of-your-Elastic-Metal-Server
       OrganizationID              ID-of-your-organization
@@ -243,8 +242,8 @@ There are many other functionalities you can access for your Elastic Metal serve
 
 <Message type="note">
 
- * Before powering off your server, we recommend you [log into your server as root](https://www.scaleway.com/en/docs/compute/elastic-metal/how-to/connect-to-server/) and execute the `halt` command to shutdown the OS. 
- * Type `scw baremetal server get name-of-server-ID zone=fr-par-2` in your terminal if you are not sure what the IP address of your Elastic Metal server is. It will display in the `IPs.0.Address` field. 
+  * Before powering off your server, we recommend you [log into your server as root](https://www.scaleway.com/en/docs/compute/elastic-metal/how-to/connect-to-server/) and execute the `halt` command to shutdown the OS. 
+  * Type `scw baremetal server get name-of-server-ID zone=fr-par-2` in your terminal if you are not sure what the IP address of your Elastic Metal server is. It will display in the `IPs.0.Address` field. 
 
 </Message>
 
@@ -401,7 +400,7 @@ Install.SSHKeyIDs.0         12345678-1234-1234-1234-123456789123
 Install.Status              completed
 PingStatus                  down
 ```
- 
+
 
 ## Deleting your Server
 

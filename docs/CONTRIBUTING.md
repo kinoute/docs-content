@@ -135,7 +135,7 @@ meta:
 content:
   h1: Bare Metal server
   paragraph: This is a tutorial Bare Metal
-image: /images/scaleway-account.png
+hero: assets/scaleway-account.png
 tags: compute baremetal bare metal cloud server dedicated
 dates:
   validation: 2021-06-22

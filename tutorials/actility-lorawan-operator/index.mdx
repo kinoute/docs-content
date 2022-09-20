@@ -65,16 +65,16 @@ To ensure messages are being properly sent, we will create a new device that wil
 
 2. Click **MQTT Webclient** on the device page. The client will open and connect automatically.
 
-  <Lightbox src="scaleway-mqtt_webclient.webp" alt="" />
+    <Lightbox src="scaleway-mqtt_webclient.webp" alt="" />
 
 3. Subscribe to the LoRaWAN© devices messages:
-  - Click **Add New Topic Subscription** in the **Subscriptions** block
-  - Pick any color to identify this subscription
-  - Leave QoS 0
-  - Use `my-app/things/+/uplink` as the topic. This will instruct the IoT Hub to send you uplink messages from all devices
-  - Click **Subscribe**
+    - Click **Add New Topic Subscription** in the **Subscriptions** block
+    - Pick any color to identify this subscription
+    - Leave QoS 0
+    - Use `my-app/things/+/uplink` as the topic. This will instruct the IoT Hub to send you uplink messages from all devices
+    - Click **Subscribe**
 
-  <Lightbox src="scaleway-mqtt_webclient_2.webp" alt="" />
+    <Lightbox src="scaleway-mqtt_webclient_2.webp" alt="" />
 
 Your subscription now appears in the **Subscriptions** block and the messages from your LoRa devices appear in the **Messages** block.
 
@@ -86,9 +86,9 @@ You can go further and leverage the power of IoT Hub to build a dashboard and di
 
 2. Configure a [Database route](/iot/iot-hub/api-cli/cli-db-tips-tricks) to push data into. Set the topic filter as: `my-app/things/+/uplink`. Your query will look like such: 
 
-  ```
-  INSERT INTO lora (time, data) VALUES (NOW(), $PAYLOAD)
-  ``` 
+    ```
+    INSERT INTO lora (time, data) VALUES (NOW(), $PAYLOAD)
+    ``` 
 
 3. [Create an Instance](/compute/instances/how-to/create-an-instance) and [set up Grafana](/tutorials/visualize-timeseries-data-timescaledb-grafana) (You can follow steps 1 to 14 of the tutorial. Do not enable the TimescaleDB option).
 
@@ -96,9 +96,9 @@ You can go further and leverage the power of IoT Hub to build a dashboard and di
 
 5. Try creating a graph by running the following query:
 
-  ````
-  SELECT time, data->'DevEUI_uplink'->'payload'->'batteryLevel' as batteryLevel FROM lora WHERE $__timeFilter(time)
-  ```
+    ```
+    SELECT time, data->'DevEUI_uplink'->'payload'->'batteryLevel' as batteryLevel FROM lora WHERE $__timeFilter(time)
+    ```
 
 <Lightbox src="scaleway-iothub_howto_actility_grafana.webp" alt="" />
 

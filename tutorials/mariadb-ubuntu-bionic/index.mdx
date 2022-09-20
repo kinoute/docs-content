@@ -119,13 +119,12 @@ You can:
 - remove the test database (which by default can be accessed by all users, even anonymous users), and privileges that permit anyone to access databases with names that start with `test_`.
 
 1. Run the following command: 
-
-  ```
-  mysql_secure_installation
-  ```
+    ```
+    mysql_secure_installation
+    ```
 
 2. Follow the steps in the wizard:
- 
+
     - Enter current password for root: Press **Enter** for none.
     - Set root password? **Y**
     - Create and confirm a new password
@@ -135,10 +134,9 @@ You can:
     - Reload privilege tables now? **Y**
 
 3. Run the following command to log in to MariaDB database server:
-
-  ```
-  mysql -u root -p
-  ```
+    ```
+    mysql -u root -p
+    ```
 
 ## Resetting Your MariaDB Root Password
 
@@ -170,15 +168,15 @@ Depending on the database used and its version, you'll need to use different com
 
 3. Start the database without loading the grant tables or enabling networking:
 
-  ```
-  sudo mysqld_safe --skip-grant-tables --skip-networking &
-  ```
+    ```
+    sudo mysqld_safe --skip-grant-tables --skip-networking &
+    ```
 
- <Message type="note">
+    <Message type="note">
 
-  The ampersand at the end of this command will make this process run in the background so you can continue to use your terminal.
+      The ampersand at the end of this command will make this process run in the background so you can continue to use your terminal.
 
- </Message>
+    </Message>
 
 4. Connect to the database as the root user (the password should not be required)
 

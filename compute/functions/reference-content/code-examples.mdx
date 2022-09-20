@@ -320,17 +320,17 @@ If you need to pass information to your function you can use environment variabl
 
 ```js
 module.exports.myHandler = (event, context, callback) => {
-   my_parameter = process.env.MYPARAMETER
+    my_parameter = process.env.MYPARAMETER
 
-   return {
-   statusCode: 201,
-   body: JSON.stringify({
-       parameter: my_parameter,
-   }),
-   headers: {
-     "Content-Type": "application/json",
-   },
- }
+    return {
+    statusCode: 201,
+    body: JSON.stringify({
+        parameter: my_parameter,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }
 }
 ```
 

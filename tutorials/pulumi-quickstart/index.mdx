@@ -164,7 +164,7 @@ In this tutorial, we will use Typescript.
 
 5. Set the Scaleway credentials
 
- 6. Add the Scaleway Credentials with the following commands to the Pulumi config:
+6. Add the Scaleway Credentials with the following commands to the Pulumi config:
 
   ```
   $ pulumi config set scaleway:access_key YYYY --secret
@@ -297,25 +297,25 @@ In this tutorial, we will use Typescript.
 
 10. Retrieve the kubeconfig file
 
-  In our `typescript` code, we exported the kubeconfig file as an output and marked it as a secret.
+    In our `typescript` code, we exported the kubeconfig file as an output and marked it as a secret.
 
-  ```
-  $ export const kubeconfig = pulumi.secret(kapsule.kubeconfigs[0].configFile);
-  ```
+    ```
+    $ export const kubeconfig = pulumi.secret(kapsule.kubeconfigs[0].configFile);
+    ```
 
-  To retrieve the kubeconfig file for manual use, you can use the following command:
+    To retrieve the kubeconfig file for manual use, you can use the following command:
 
-  ```
-  $ pulumi stack output kubeconfig --show-secrets > kubeconfig.yaml
-  ```
+    ```
+    $ pulumi stack output kubeconfig --show-secrets > kubeconfig.yaml
+    ```
 
- Run the following command to verify that the kubeconfig file is valid.
+    Run the following command to verify that the kubeconfig file is valid.
 
-  ```
-  $ export KUBECONFIG=kubeconfig.yaml && kubectl get nodes
-  NAME                                             STATUS   ROLES    AGE   VERSION
-  scw-pulumi-kapsule-pulumi-kapsule-pool-6d0c822   Ready    <none>   25m   v1.23.6
-  ```
+    ```
+    $ export KUBECONFIG=kubeconfig.yaml && kubectl get nodes
+    NAME                                             STATUS   ROLES    AGE   VERSION
+    scw-pulumi-kapsule-pulumi-kapsule-pool-6d0c822   Ready    <none>   25m   v1.23.6
+    ```
 
 ## Add new resources to your Pulumi program
 

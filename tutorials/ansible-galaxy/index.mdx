@@ -33,34 +33,34 @@ To use roles in Ansible playbooks, you must first download them.
 
 1. Install Apache, MySQL and PHP. 
 
-  ```
-  ansible-galaxy install geerlingguy.apache geerlingguy.mysql geerlingguy.php
-  ```
+    ```
+    ansible-galaxy install geerlingguy.apache geerlingguy.mysql geerlingguy.php
+    ```
 
-  <Message type="note">
+    <Message type="note">
 
-    In this example we use `geerlinguy`'s role, which is a software developer involved in many open source development communities. The latest version will be dowloaded if you do not specify which one you want to download. Add the version after the role name to specify a version. Example: `geerlingguy.apache,1.0.0` or `geerlingguy.mysql,1.0.0`. 
-    
-    If you want to use other roles, check out [geerlinguy](https://galaxy.ansible.com/geerlingguy)'s Ansible profile.
+      In this example we use `geerlinguy`'s role, which is a software developer involved in many open source development communities. The latest version will be dowloaded if you do not specify which one you want to download. Add the version after the role name to specify a version. Example: `geerlingguy.apache,1.0.0` or `geerlingguy.mysql,1.0.0`. 
+      
+      If you want to use other roles, check out [geerlinguy](https://galaxy.ansible.com/geerlingguy)'s Ansible profile.
 
-  </Message>
+    </Message>
 
 2. Create an Ansible playbook named `lamp.yml` with the following contents:
 
-  ```
-  ---
-    - hosts: all
-      roles:
-        - geerlingguy.mysql
-        - geerlingguy.apache
-        - geerlingguy.php
-  ```
+    ```
+    ---
+      - hosts: all
+        roles:
+          - geerlingguy.mysql
+          - geerlingguy.apache
+          - geerlingguy.php
+    ```
 
 3. Run the playbook against a host
 
-  ```
-  ansible-playbook lamp.yml
-  ```
+    ```
+    ansible-playbook lamp.yml
+    ```
 
 The LAMP server is now created.
 
@@ -68,34 +68,34 @@ The LAMP server is now created.
 
 Apache Solr is a fast open-source Java search server. Solr enables you to easily create search engines that search websites, databases and files. 
 
-  <Message type="note">
+<Message type="note">
 
-  For more information on Solr, refer to the [Solr official documentation](http://lucene.apache.org/solr/news.html).
+For more information on Solr, refer to the [Solr official documentation](http://lucene.apache.org/solr/news.html).
 
-  </Message>
+</Message>
 
 1. Install Java, tomcat6, Solr with an ansible-galaxy command. We will use the role from `geerlinguy` who is a software developer involved in many open source development communities. Check [geerlinguy](https://galaxy.ansible.com/geerlingguy) for many other roles.
 
-  ```
-  ansible-galaxy install geerlingguy.java geerlingguy.tomcat6 geerlingguy.solr
-  ```
+    ```
+    ansible-galaxy install geerlingguy.java geerlingguy.tomcat6 geerlingguy.solr
+    ```
 
 2. Create a playbook named `solr.yml` with the following contents:
 
-  ```
-    ---
-    - hosts: all
-      roles:
-        - geerlingguy.java
-        - geerlingguy.tomcat6
-        - geerlingguy.solr
-  ```
+    ```
+      ---
+      - hosts: all
+        roles:
+          - geerlingguy.java
+          - geerlingguy.tomcat6
+          - geerlingguy.solr
+    ```
 
 3. Run the playbook against a host
 
-  ```
-  ansible-playbook solr.yml
-  ```
+    ```
+    ansible-playbook solr.yml
+    ```
 
 The Solr server is now created. 
 

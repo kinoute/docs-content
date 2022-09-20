@@ -29,25 +29,24 @@ This page shows how to connect to your Scaleway Elastic Metal server via SSH. Th
 1. Open a terminal program.
 
 2. Enter the command below into the terminal. Make sure you replace `your_private_key` with the filename of your private key (often `id_rsa`) and `your_server_ip` with the IP address of your Elastic Metal server.
+    ```bash
+    ssh -i ~/.ssh/your_private_key root@your_server_ip
+    ```
 
-  ```bash
-  ssh -i ~/.ssh/your_private_key root@your_server_ip
-  ```
+    <Message type="tip">
 
-  <Message type="tip">
+    To find the IP address of your Elastic Metal server, log into the Scaleway console and
+    click **Elastic Metal** in the Compute section of the side menu. A list of your
+    Elastic Metal servers and their associated IP addresses will display.
 
-  To find the IP address of your Elastic Metal server, log into the Scaleway console and
-  click **Elastic Metal** in the Compute section of the side menu. A list of your
-  Elastic Metal servers and their associated IP addresses will display.
-
-  </Message>
+    </Message>
 
 3. If / when prompted, allow connection to the host by typing `yes`, then press **Enter**.
-  ```
-  The authenticity of host 'myhost.ext (212.47.226.35)' can't be established.
-  RSA key fingerprint is 4f:ba:65:cf:14:64:a7:1e:b6:07:7c:00:71:95:21:fa.
-  Are you sure you want to continue connecting (yes/no)?
-  ```
+    ```
+    The authenticity of host 'myhost.ext (212.47.226.35)' can't be established.
+    RSA key fingerprint is 4f:ba:65:cf:14:64:a7:1e:b6:07:7c:00:71:95:21:fa.
+    Are you sure you want to continue connecting (yes/no)?
+    ```
 
 You are now connected to your Elastic Metal server.
 
@@ -59,21 +58,21 @@ To connect to your Elastic Metal server from Windows, you will need to use a sma
 
 2. Launch PuTTy on your computer. The main screen of the application displays:
 
-   <Lightbox src="scaleway-putty-main.webp" alt="" />
+    <Lightbox src="scaleway-putty-main.webp" alt="" />
 
 3. Enter your Elastic Metal server's IP address in the **Hostname** field.
 
-   <Message type="tip">
+    <Message type="tip">
 
-  To find the IP address of your Elastic Metal server, log into the Scaleway console and
-  click **Elastic Metal** in the Compute section of the side menu. A list of your
-  Elastic Metal servers and their associated IP addresses will display.
+    To find the IP address of your Elastic Metal server, log into the Scaleway console and
+    click **Elastic Metal** in the Compute section of the side menu. A list of your
+    Elastic Metal servers and their associated IP addresses will display.
 
-   </Message>
+    </Message>
 
 4. In the side menu, under **Connection** navigate to the **Auth** sub-category. Do this by expanding **Connection**, then **SSH** and finally clicking on **Auth**:
 
-   <Lightbox src="scaleway-putty-ssh.webp" alt="" />
+    <Lightbox src="scaleway-putty-ssh.webp" alt="" />
 
 5. Click the **Browse** button and select the private key file you [generated previously](/console/my-project/how-to/create-ssh-key/).
 
@@ -81,12 +80,12 @@ To connect to your Elastic Metal server from Windows, you will need to use a sma
 
 7. Click **OK** to confirm.
 
-   <Lightbox src="scaleway-putty-security.webp" alt="" />
+    <Lightbox src="scaleway-putty-security.webp" alt="" />
 
-   The terminal window diplays.
+    The terminal window diplays.
 
 8. Enter the username `root` and press **Enter** to authenticate against the server with your SSH key.
-   <Lightbox src="scaleway-putty-logged.webp" alt="" />
+    <Lightbox src="scaleway-putty-logged.webp" alt="" />
 
 You are now connected to your Elastic Metal server.
 

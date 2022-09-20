@@ -10,7 +10,7 @@ categories:
   - dedicated servers
   - dedibox
   - compute
-image: /assets/scaleway_odoo.webp
+hero: assets/scaleway_odoo.webp
 dates:
   validation: 2022-05-19
   posted: 2020-08-13
@@ -120,16 +120,15 @@ This tutorial will show you how to deploy Odoo 14 on a Scaleway machine running 
   ```
 
 6. Install the remaining requirements using `pip3`:
+    <Message type="note">
 
-  <Message type="note">
- 
-    This step may take a while.
- 
-  </Message>
+      This step may take a while.
 
-  ```
-  sudo -H pip3 install -r https://raw.githubusercontent.com/odoo/odoo/master/requirements.txt
-  ```
+    </Message>
+
+    ```
+    sudo -H pip3 install -r https://raw.githubusercontent.com/odoo/odoo/master/requirements.txt
+    ```
 
 7. Install Odoo using `apt`:
 
